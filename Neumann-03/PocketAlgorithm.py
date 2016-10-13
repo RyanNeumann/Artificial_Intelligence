@@ -2,7 +2,11 @@ import numpy as np
 import random
 import os, subprocess
 import matplotlib.pyplot as plt
-from sklearn.datasets.samples_generator import make_blobs
+# from sklearn.datasets.samples_generator import make_blobs
+from numpy import genfromtxt
+# read digits data & split it into X (training input) and y (target output)
+
+
 
 class Perceptron:
     def __init__(self, N):
@@ -11,9 +15,11 @@ class Perceptron:
  
     def generate_points(self, N):
 	         
-	ctrs = 3 * np.random.normal(0, 1, (2, 2))
-        X, y = make_blobs(n_samples=100, centers=ctrs, n_features=2, cluster_std=1.0, shuffle=False, random_state=0)
-        y [y==0] = -1
+        dataset = genfromtxt('features.csv', delimiter=' ')
+        y = dataset[:, 0]
+        X = dataset[:, 1:]
+        y[y<>1] = -1
+        y[y==1] = +1
 	bX = []
         for k in range(0,N) :
             bX.append((np.concatenate(([1], X[k,:])), y[k]))
