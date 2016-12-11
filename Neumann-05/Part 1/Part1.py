@@ -20,10 +20,10 @@ from sklearn.utils import shuffle
 from time import time
 
 # Specify the number of colors here
-n_colors = 1
+n_colors = 25
 
 # Load your photo here
-img = misc.imread('LinkedInProfile.jpg')
+img = misc.imread('Test.jpg')
 
 # Convert to floats instead of the default 8 bits integer coding. Dividing by
 # 255 is important so that plt.imshow behaves works well on float data (need to
